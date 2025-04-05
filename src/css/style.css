@@ -1,0 +1,253 @@
+/** {
+    margin: 0;
+    padding: 0;
+}
+*/
+a{
+    text-decoration: none;
+}
+
+ /* 全局样式 */
+        body {
+            font-family: 'f' !important;
+            background-color: #f9fafb;
+            color: #374151;
+            line-height: 1.5;
+            /*background-image: url('../img/3.');
+            background-size: cover;
+            background-position: center;*/
+
+        }
+
+@font-face {
+    /* 为载入的字体取名字(随意) */
+    font-family: 'f';
+    /* 字体文件地址(相对或者绝对路径都可以) */
+    src: url(f.woff2);
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+       
+        /* 导航栏样式 */
+        nav {
+            background-color: transparent;
+            backdrop-filter: none;
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #64748b;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: skyblue;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #64748b;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: skyblue;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
+        /* 滚动时显示背景和下边框 */
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ccc;
+            animation: fadeInBorder 0.3s ease;
+        }
+
+        @keyframes fadeInBorder {
+            from {
+                border-bottom-color: transparent;
+            }
+            to {
+                border-bottom-color: #ccc;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        /* 横幅样式 */
+    .banner {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* 让文字和图片之间产生距离 */
+        text-align: center;
+        padding: 0 10%; /* 可以根据需要调整左右内边距 */
+    }
+
+    .banner-image {
+
+        flex: 1;
+        max-width: 700px;
+        max-height: 800px;
+        border-radius: 22px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-left: 50px; /* 增加左边距，调整文字和图片之间的距离 */
+    }
+
+        .banner-content {
+            background-color: transparent!important;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+        /*.banner-image {
+            flex: 1;
+            max-width: 330px;
+            max-height: 440px;
+            border-radius: 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-right: 60px;
+        }*/
+/*
+        .banner3{
+            margin: 12px 12px 12px 12px;
+            text-align: right;
+        }*/
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        .banner a:hover {
+            
+            color: skyblue;
+        }
+
+        .banner p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+        }
+
+        .btn {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            /*border-radius: 0.25rem;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+           
+        }
+
+        .btn:hover {
+            background-color: #334155;
+        }
+
+         /* 页脚样式 */
+        footer {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: skyblue;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
